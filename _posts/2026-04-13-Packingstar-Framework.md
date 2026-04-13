@@ -15,7 +15,7 @@ description: "复旦大学Packingstar相关架构的笔记"
 
 ## 核心框架解析
 
-![framework of Packingstar](Framework.png)
+![framework of Packingstar]({{ '/assets/images/Framework.png' | relative_url }})
 
 PackingStar 的整体流程分为三个步骤（Step 1 → Step 2 → Step 3），对应：几何特征提取 → 矩阵初始化 → 双人博弈求解，下面逐一展开。
 
