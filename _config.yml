@@ -1,0 +1,9 @@
+title: "Hengyu's Home"
+description: "同济大学2023级 王衡宇的个人主页"
+url: "https://hengyu0510.github.io"
+baseurl: ""
+permalink: /posts/:year-:month-:day-:title/
+
+exclude:
+  - README.md
+  - LICENSE

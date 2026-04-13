@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>页面未找到 - Hengyu's Home</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="site-title">Hengyu's Home</a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Posts</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+---
+layout: default
+title: 页面未找到
+permalink: /404.html
+---
 
-  <main class="main-content" style="text-align: center;">
-    <h1 class="page-title">404</h1>
-    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-xl);">你访问的页面不存在。</p>
-    <a href="index.html">&larr; 返回首页</a>
-  </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2026 Hengyu Wang | Tongji University</p>
-  </footer>
-</body>
-</html>
+<main class="main-content" style="text-align: center;">
+  <h1 class="page-title">404</h1>
+  <p style="color: var(--color-text-secondary); margin-bottom: var(--space-xl);">你访问的页面不存在。</p>
+  <a href="{{ '/' | relative_url }}">&larr; 返回首页</a>
+</main>

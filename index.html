@@ -1,58 +1,22 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hengyu's Home</title>
-  <meta name="description" content="同济大学2023级 王衡宇的个人主页">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="site-title">Hengyu's Home</a>
-      <button class="menu-toggle" aria-label="切换菜单" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Posts</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+---
+layout: default
+---
 
-  <main class="main-content">
-    <section class="post-list">
+<main class="main-content">
+  <section class="post-list">
 
-      <article class="post-item">
-        <time class="post-date" datetime="2026-04-13">2026年4月13日</time>
-        <h2 class="post-title">
-          <a href="posts/2026-04-13-first-post.html">我的第一篇文章</a>
-        </h2>
-        <p class="post-excerpt">
-          Hello World! This is my first blog.
-        </p>
-        <a href="posts/2026-04-13-first-post.html" class="read-more">阅读全文 &rarr;</a>
-      </article>
+    {% for post in site.posts %}
+    <article class="post-item">
+      <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y年%-m月%-d日' }}</time>
+      <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <p class="post-excerpt">
+        {{ post.excerpt | strip_html | truncate: 120 }}
+      </p>
+      <a href="{{ post.url | relative_url }}" class="read-more">阅读全文 &rarr;</a>
+    </article>
+    {% endfor %}
 
-      <!-- 添加新文章：在此处上方插入新的 <article class="post-item"> 块，最新的文章放在最上面 -->
-
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2026 Hengyu Wang | Tongji University</p>
-    <p>
-      <a href="https://github.com/why0510-493520" target="_blank" rel="noopener">GitHub</a>
-    </p>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
+  </section>
+</main>
